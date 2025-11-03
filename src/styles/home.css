@@ -1,0 +1,207 @@
+.home-container {
+  min-height: 98vh;
+  background: linear-gradient(135deg, #0037ff 0%, #5b00ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: url('../assets/waves.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.home-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px 0 20px;
+  color: white;
+}
+
+.home-header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.profile-menu-container {
+  position: relative;
+}
+
+.profile-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.profile-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.profile-button .profile-icon {
+  font-size: 20px;
+}
+
+.profile-button .username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.profile-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  width: 240px;
+  overflow: hidden;
+  animation: slideDown 0.2s ease;
+}
+
+.profile-menu-header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 55, 255, 0.05);
+}
+
+.profile-menu-header .profile-icon {
+  font-size: 24px;
+  color: #0037ff;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.user-info .username {
+  font-weight: 600;
+  color: #333;
+}
+
+.user-info .email {
+  font-size: 12px;
+  color: #666;
+}
+
+.profile-menu-divider {
+  height: 1px;
+  background: #eee;
+  margin: 0;
+}
+
+.logout-button {
+  width: 100%;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff3b30;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #fff5f5;
+}
+
+.logout-icon {
+  font-size: 18px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .profile-menu {
+    background: #1a1a1a;
+  }
+
+  .profile-menu-header {
+    background: rgba(0, 55, 255, 0.1);
+  }
+
+  .user-info .username {
+    color: #fff;
+  }
+
+  .user-info .email {
+    color: #999;
+  }
+
+  .profile-menu-divider {
+    background: #333;
+  }
+
+  .logout-button {
+    color: #ff453a;
+  }
+
+  .logout-button:hover {
+    background: rgba(255, 69, 58, 0.1);
+  }
+}
+
+.header-actions button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  max-height: 85vh;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    padding: 16px 16px 0 16px;
+  }
+
+  .upload-section {
+    margin-bottom: 12px;
+  }
+}

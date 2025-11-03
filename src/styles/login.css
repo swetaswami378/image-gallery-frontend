@@ -1,0 +1,218 @@
+.auth-container {
+  min-height: 98vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0037ff 0%, #5b00ff 100%);
+  padding: clamp(16px, 5vw, 40px);
+  box-sizing: border-box;
+}
+
+.auth-box {
+  background: white;
+  border-radius: clamp(8px, 2vw, 12px);
+  padding: clamp(20px, 5vw, 40px);
+  width: 100%;
+  max-width: min(90vw, 400px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: clamp(20px, 4vw, 30px);
+  border-bottom: 1px solid #e0e0e0;
+  gap: 8px;
+}
+
+.tab-button {
+  flex: 1;
+  padding: clamp(12px, 3vw, 15px);
+  background: none;
+  border: none;
+  font-size: clamp(14px, 3vw, 16px);
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 44px; /* Touch-friendly size */
+}
+
+.tab-button.active {
+  color: #0037ff;
+  border-bottom: 2px solid #0037ff;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  position: relative;
+  width: 100%;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.password-input-container {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* .password-input-container input {
+  padding-right: 45px;
+} */
+
+.password-toggle {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: color 0.3s ease;
+  font-size: 18px;
+}
+
+.password-toggle:hover {
+  color: #0037ff;
+}
+
+.password-toggle:focus {
+  outline: none;
+  color: #0037ff;
+}
+
+/* Prevent the eye icon from affecting the input's appearance */
+.password-input-container input:focus + .password-toggle {
+  color: #0037ff;
+}
+
+.form-group input:focus {
+  border-color: #0037ff;
+  outline: none;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 2vw, 12px);
+  font-size: clamp(12px, 2vw, 14px);
+  color: #666;
+  min-height: 44px; /* Touch-friendly height */
+}
+
+.remember-me input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.submit-button {
+  background: #0037ff;
+  color: white;
+  padding: clamp(12px, 3vw, 16px);
+  border: none;
+  border-radius: 5px;
+  font-size: clamp(14px, 2.5vw, 16px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  min-height: 44px; /* Touch-friendly height */
+  width: 100%;
+}
+
+.submit-button:hover {
+  background: #002cc9;
+}
+
+@media (hover: none) {
+  .submit-button:active {
+    background: #002cc9;
+  }
+}
+
+.forgot-password {
+  text-align: center;
+  font-size: clamp(12px, 2vw, 14px);
+  margin-top: clamp(12px, 2vw, 16px);
+}
+
+.forgot-password a {
+  color: #0037ff;
+  text-decoration: none;
+  padding: 8px; /* Larger touch target */
+  display: inline-block;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Add responsive breakpoints */
+@media screen and (max-width: 480px) {
+  .auth-box {
+    padding: 20px;
+  }
+  
+  .auth-tabs {
+    margin-bottom: 16px;
+  }
+  
+  .form-group {
+    margin-bottom: 12px;
+  }
+}
+
+/* Add dark mode support */
+@media (prefers-color-scheme: dark) {
+  .auth-box {
+    background: #1a1a1a;
+    color: #fff;
+  }
+  
+  .form-group input {
+    background: #2d2d2d;
+    border-color: #404040;
+    color: #fff;
+  }
+  
+  .tab-button {
+    color: #a0a0a0;
+  }
+  
+  .tab-button.active {
+    color: #66a3ff;
+    border-bottom-color: #66a3ff;
+  }
+  
+  .submit-button {
+    background: #0052cc;
+  }
+  
+  .submit-button:hover {
+    background: #0066ff;
+  }
+  
+  .forgot-password a {
+    color: #66a3ff;
+  }
+}
